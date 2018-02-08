@@ -1,0 +1,92 @@
+<template name="dashboard">
+  <div class="template-dashboard">
+    <div class="page-header">
+      <h1>Dashboard</h1>
+    </div>
+
+    <ul class="list-group">
+      {{#each mymeetups}}	  
+	  
+        <li class="list-group-item">
+			<a data-toggle="modal" data-target="#myModal{{_id}}">{{title}}</a>
+			<span class="label label-default">{{city}}, {{state}}</span>
+			<a id="{{_id}}" class="pull-right remove-meetup"><i class="fa fa-remove"></i></a>
+		</li>
+		
+		<!-- Modal -->
+			<div class="modal fade" id="myModal{{_id}}" tabindex="-1" role="dialog" aria-labelledby="myModal{{_id}}Label">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModal{{_id}}Label"><b>Edit meetup</b></h4>
+				  </div>
+			<div class="modal-body">	 
+				<form class="update-meetup-form">
+					<div class="form-group">
+						<label>Meetup Title</label>
+						<input type="text" class="form-control" id="title" name="title" value="{{title}}" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label>Contact Email</label>
+						<input type="email" class="form-control" id="email" name="email" value="{{email}}" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label>Topics</label>
+						<input type="text" class="form-control" id="topics" name="topics" value="{{topics}}" placeholder="Topics (eg. Coding. design...)">
+					</div>
+					<div class="form-group">
+						<label>Type</label>
+						<select id="type" name="type" class="form-control" value="x">
+							<option value="public">Public</option>
+							<option value="private">Private</option>
+							<option value="invite">Invite Only</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Meetup Date</label>
+						<div class="input-group datetimepicker">
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+							<input class="set-due-date form-control" id="meetupdate" name="meetupdate" type="text" value="{{meetupdate}}" >			
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Address</label>
+						<input type="text" class="form-control" id="address" name="address" value="{{address}}" placeholder="Street Address">
+					</div>
+					<div class="form-group">
+						<label>City</label>
+						<input type="text" class="form-control" id="city" name="city" value="{{city}}" placeholder="City">
+					</div>
+					<div class="form-group">
+						<label>State</label>
+						<input type="text" class="form-control" id="state" name="state" value="{{state}}" placeholder="State">
+					</div>
+					<div class="form-group">
+						<label>Post Code</label>
+						<input type="text" class="form-control" id="postcode" name="postcode" value="{{postcode}}" placeholder="Post Code">
+					</div>
+					<input type="hidden"  id="id" name="id" value="{{_id}}">
+					<button type="submit" class="btn btn-primary">Update Meetup</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</form>	
+			</div>	
+				
+				  <div class="modal-footer">					
+					
+					
+										
+				  </div>
+				</div>
+			  </div>
+			</div>
+		<!-- End of Modal -->	
+
+		{{else}}
+		<p>You haven't currently added any meetups.</p> 
+      {{/each}}
+    </ul>
+
+  </div>
+</template>
+

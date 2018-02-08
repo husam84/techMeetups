@@ -1,0 +1,18 @@
+<template name="home">
+  <div class="template-home">
+    <div class="page-header">
+      <h1>Welcome to Tech Meetups</h1>
+    </div>
+    <p class="text-center">
+     Find a meetup below. If you wish to add up a meetup, you have to login.
+    </p>
+	
+	<div class="text-center">
+	{{#if currentUser}}
+		<a href="meetups/add" class="btn btn-primary">Add a meetup</a>
+	{{/if}}	
+		<a href="meetups/" class="btn btn-primary">Find a meetup</a>
+		
+	</div>
+  </div>
+</template>

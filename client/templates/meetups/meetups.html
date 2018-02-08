@@ -1,0 +1,45 @@
+<template name="meetups">
+  <div class="template-meetups">
+    <div class="page-header">
+      <h1>Meetups</h1>
+    </div>
+
+    <ul class="list-group">
+      {{#each meetups}}	  
+	  
+        <li class="list-group-item"><a data-toggle="modal" data-target="#myModal{{_id}}">{{title}}</a> <span class="label label-default">{{city}}, {{state}}</span></li>
+		
+		<!-- Modal -->
+			<div class="modal fade" id="myModal{{_id}}" tabindex="-1" role="dialog" aria-labelledby="myModal{{_id}}Label">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModal{{_id}}Label"><b>{{title}}</b></h4>
+				  </div>
+				  <div class="modal-body">
+					<ul class="List-group">
+						<li class="list-group-item"><b>Date & Time:</b> {{meetupdate}}</li>
+						<li class="list-group-item"><b>Address:</b> {{address}} {{city}}, {{state}} {{postcode}}</li>
+						<li class="list-group-item"><b>Topics:</b> {{topics}}</li>
+						<li class="list-group-item"><b>Meetup Type:</b> {{type}}</li>
+						<li class="list-group-item"><b>Contact Email:</b> {{email}}</li>
+					</ul>
+					<br>
+					<p class="well"><b>Posted By:</b> {{username}}</p>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		<!-- End of Modal -->	
+		{{else}}
+		<p>There are currently no meetups.</p>
+      {{/each}}
+    </ul>
+
+  </div>
+</template>
+
