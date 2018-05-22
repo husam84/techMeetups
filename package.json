@@ -1,0 +1,14 @@
+{
+  "name": "techmeetup",
+  "version": "1.0.0",
+  "description": "Techmeetup",
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.47"
+  },
+  "engines": {
+    "node": "8.9.4"
+  }
+}
