@@ -1,6 +1,15 @@
 # techMeetups
 Full Stack Meteor.js and Mongo.DB App
 Vide demo (No sound): https://drive.google.com/file/d/1kSQaZFZ7wgM86p-VWLeHiL7IdHHOO2SB/view?usp=sharing
+visit app: http://techmeetupsapp.herokuapp.com
+
+# Update Meteor and run locally
+
+To run app locally, update meteor:
+meteor update
+
+To install packages via npm:
+meteor npm install
 
 # meteor-boilerplate
 
